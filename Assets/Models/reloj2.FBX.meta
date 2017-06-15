@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: 202f68332c73644999c68eeeed6a3db2
+timeCreated: 1496721999
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Dummy01
+    100002: Dummy01 1
+    100004: KIOSCO
+    100006: RELOJ MADERA
+    100008: RELOJ-CRISTALES
+    100010: RELOJ-PAREDES
+    100012: //RootNode
+    100014: RELOJES
+    100016: Spot01
+    100018: Spot01.Target
+    100020: Spot02
+    100022: Spot02.Target
+    100024: Spot03
+    100026: Spot03.Target
+    100028: Spot04
+    100030: Spot04.Target
+    100032: Spot05
+    100034: Spot05.Target
+    100036: tejados
+    400000: Dummy01
+    400002: Dummy01 1
+    400004: KIOSCO
+    400006: RELOJ MADERA
+    400008: RELOJ-CRISTALES
+    400010: RELOJ-PAREDES
+    400012: //RootNode
+    400014: RELOJES
+    400016: Spot01
+    400018: Spot01.Target
+    400020: Spot02
+    400022: Spot02.Target
+    400024: Spot03
+    400026: Spot03.Target
+    400028: Spot04
+    400030: Spot04.Target
+    400032: Spot05
+    400034: Spot05.Target
+    400036: tejados
+    2300000: RELOJ MADERA
+    2300002: RELOJ-CRISTALES
+    2300004: RELOJ-PAREDES
+    2300006: RELOJES
+    2300008: tejados
+    3300000: RELOJ MADERA
+    3300002: RELOJ-CRISTALES
+    3300004: RELOJ-PAREDES
+    3300006: RELOJES
+    3300008: tejados
+    4300000: RELOJ MADERA
+    4300002: RELOJ-CRISTALES
+    4300004: RELOJ-PAREDES
+    4300006: RELOJES
+    4300008: tejados
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

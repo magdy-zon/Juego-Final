@@ -7,14 +7,19 @@ public class PlayerController : MonoBehaviour {
 	/**
 	 * Controller for set the movement of the player
 	 */
-	 public float inputDelay = 0.1f;
+	public float inputDelay = 0.1f;
 	public float forwardVel = 12f;
 	public float rotateVel = 160f;
+	public float distanceToGround = 0.1f;
+	public float jumpVel = 12f;
+	public float downAcccel = 0.65f;
+
+	public LayerMask ground; 
 
 	Rigidbody rbody;
 	Quaternion targetRotation;
-	Vector3 walking;
-	float forwardInput, turnInput;
+	Vector3 velocity = Vector3.zero;
+	float forwardInput, turnInput, jumpInput;
 
 	void Start () {
 		targetRotation = transform.rotation;
@@ -23,18 +28,23 @@ public class PlayerController : MonoBehaviour {
 		else
 			Debug.LogError("Falle");
 
-		forwardInput = turnInput = 0;
+		forwardInput = turnInput = jumpInput = 0;
 	}
 
 	void GetInput() {
 		turnInput = Input.GetAxis ("Horizontal");
 		forwardInput = Input.GetAxis ("Vertical");
+		jumpInput = Input.GetAxisRaw ("Jump");
 	}
 
 	void Turn () {
 		if(Mathf.Abs(turnInput) > inputDelay)
 			targetRotation *= Quaternion.AngleAxis(rotateVel * turnInput * Time.deltaTime, Vector3.up);
 		transform.rotation = targetRotation;
+	}
+
+	bool Grounded () {
+		return Physics.Raycast( transform.position, Vector3.down, distanceToGround, ground);
 	}
 
 	void Update () {
@@ -44,13 +54,26 @@ public class PlayerController : MonoBehaviour {
 
 	void Run () {
 		if(Mathf.Abs(forwardInput) > inputDelay)
-			rbody.velocity = transform.forward * forwardInput * forwardVel;
+			velocity.z = forwardInput * forwardVel;
 		else
-			rbody.velocity = Vector3.zero;
+			velocity.z = 0;
+	}
+
+	void Jump () {
+		if (jumpInput > 0 && Grounded ())
+			velocity.y = jumpVel;
+		else if (jumpInput == 0 && Grounded ())
+			velocity.y = 0;
+		else
+			velocity.y -= downAcccel;	
 	}
 
 	void FixedUpdate () {
 		Run();
+		Jump ();
+
+		rbody.velocity = transform.TransformDirection (velocity);
+
 	}
-	
+
 }
