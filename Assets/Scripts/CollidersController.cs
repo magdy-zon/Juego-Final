@@ -12,10 +12,11 @@ public class CollidersController : MonoBehaviour {
 	public GameObject aCarpaGrande;
 	public GameObject aPrincipalJuego;
 	public GameObject talkArlequinBueno;
+	public GameObject toPrincipalAgain;
+	public GameObject toLavaCollider;
+	public GameObject toMiniScene;
 	public GameObject key;
-
-	DatosController datos;
-	int escenaActual;
+	public GameObject mago;
 
 	/**
 	 * Script for do actions when the gamer collides when a specific target
@@ -29,9 +30,12 @@ public class CollidersController : MonoBehaviour {
 		aCarpaGrande = GameObject.FindGameObjectWithTag ("aCarpaGrande");
 		aPrincipalJuego = GameObject.FindGameObjectWithTag ("aPrincipalJuego");
 		talkArlequinBueno = GameObject.FindGameObjectWithTag ("forTalkArlequinBueno");
+		toPrincipalAgain = GameObject.FindGameObjectWithTag ("toPrincipalAgain");
 		key = GameObject.FindGameObjectWithTag ("key");
+		toLavaCollider = GameObject.FindGameObjectWithTag ("toLavaCollider");
+		toMiniScene = GameObject.FindGameObjectWithTag ("colliderForMiniScene");
+		mago = GameObject.FindGameObjectWithTag ("mago");
 
-		datos = new DatosController (0);
 
 		if (itemHistory != null)
 			itemHistory.SetActive (false);
@@ -43,38 +47,43 @@ public class CollidersController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		escenaActual = datos.getScene();
+		//escenaActual = datos.getScene();
 	}
 
 	void OnTriggerEnter (Collider other) {
 		//Scena inicioJuego
 		if (other.gameObject.tag == "aCarpaGrande") {
-			datos.setEscena (escenaActual++);
-			Debug.Log(escenaActual);
 			SceneManager.LoadScene ("carpaGrandeJuego");
 		}
 		//Scene CarpaGrande
 		if (other.gameObject.tag == "talkWizard") {
-			Debug.Log(escenaActual);
 			cuentaHistoriaMago ();
 			activaHistoria1 ();
 		}
 		if (other.gameObject.tag == "aPrincipalJuego") {
 			Debug.Log("Contando la historia...");
-			datos.setEscena (escenaActual++);
-			Debug.Log(escenaActual);
 			SceneManager.LoadScene ("PrincipalJuego");
 		}
 		//Scene PrincipalJuego
 		if (other.gameObject.tag == "forTalkArlequinBueno") {
-			Debug.Log(escenaActual);
 			talkArlequinBueno.SetActive (false);
 			arlequinBueno ();
 		}
+		if (other.gameObject.tag == "colliderForMiniScene") {
+			SceneManager.LoadScene ("miniCarpaJuego\t");
+		}	
 		//Scene MiniCarpa
 		if (other.gameObject.tag == "recogerKey") {
 			recogerKey ();
 		}
+		//Scene Globos
+		if (other.gameObject.tag == "toPrincipalAgain") {
+			SceneManager.LoadScene ("PrincipalJuego");
+		}
+		if (other.gameObject.tag == "toLavaCollider") {
+			SceneManager.LoadScene ("LavaJuego");
+		}
+
 
 	}
 
@@ -90,12 +99,14 @@ public class CollidersController : MonoBehaviour {
 	 */
 	void arlequinBueno() {
 		Debug.Log("Contando la historia de que el mago trata mal al arlequin...");
+		SceneManager.LoadScene ("globos");
 
 	}
 
 	void activaHistoria1() {
 		itemHistory.SetActive (true);
 		godRays.SetActive (true);
+		mago.SetActive (false);
 		if (jaulaCirco != null)
 			jaulaCirco.SetActive (false);
 		if (cañon != null)
