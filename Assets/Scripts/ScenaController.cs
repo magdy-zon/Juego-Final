@@ -7,6 +7,7 @@ public class ScenaController : MonoBehaviour {
 	public float rotateVel = 50f;
 
 	public GameObject itemHistory;
+	public GameObject key;
 	Quaternion targetRotation;
 
 	/**
@@ -20,13 +21,12 @@ public class ScenaController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if ( itemHistory )
-			rotarHistoria ();
+		rotarHistoria ();
 	}
 
 	void rotarHistoria() {
 		targetRotation *= Quaternion.AngleAxis(rotateVel * Time.deltaTime, Vector3.up);
 		transform.rotation = targetRotation;
-	}
+	}	
 
 }
