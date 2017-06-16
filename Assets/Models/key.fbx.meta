@@ -1,27 +1,15 @@
 fileFormatVersion: 2
-guid: f81ab191c9bd8124a8276efc26287e0f
-timeCreated: 1497558994
+guid: f396c6a145ccb4e5bb032ef8cf830ddc
+timeCreated: 1497605741
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: body
-    100002: head
-    100004: left_eye
-    100006: //RootNode
-    400000: body
-    400002: head
-    400004: left_eye
-    400006: //RootNode
-    2300000: body
-    2300002: head
-    2300004: left_eye
-    3300000: body
-    3300002: head
-    3300004: left_eye
-    4300000: body
-    4300002: left_eye
-    4300004: head
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Key_B
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -33,6 +21,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
