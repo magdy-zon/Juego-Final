@@ -9,7 +9,9 @@ public class ScenaController : MonoBehaviour {
 	public GameObject itemHistory;
 	Quaternion targetRotation;
 
-	// Use this for initialization
+	/**
+	 * Script for animate elements of the scenary automatically
+	 */
 	void Start () {
 		targetRotation = transform.rotation;
 		itemHistory = GameObject.FindGameObjectWithTag("itemHistory");
