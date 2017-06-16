@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
 	public float forwardVel = 12f;
 	public float rotateVel = 160f;
 	public float distanceToGround = 0.1f;
-	public float jumpVel = 122f;
+	public float jumpVel = 12f;
 	public float downAcccel = 0.65f;
 
 	public LayerMask ground; 

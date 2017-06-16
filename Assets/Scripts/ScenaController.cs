@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class ScenaController : MonoBehaviour {
 
-	public float rotateVel = 160f;
+	public float rotateVel = 50f;
 
-	Rigidbody rbody;
+	public GameObject itemHistory;
 	Quaternion targetRotation;
 
 	// Use this for initialization
 	void Start () {
 		targetRotation = transform.rotation;
-		if(GetComponent<Rigidbody> ())
-			rbody = GetComponent<Rigidbody> ();
-		else
-			Debug.LogError("Falle");
+		itemHistory = GameObject.FindGameObjectWithTag("itemHistory");
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		rotarHistoria ();
+		if ( itemHistory )
+			rotarHistoria ();
 	}
 
 	void rotarHistoria() {
 		targetRotation *= Quaternion.AngleAxis(rotateVel * Time.deltaTime, Vector3.up);
 		transform.rotation = targetRotation;
 	}
+
 }
